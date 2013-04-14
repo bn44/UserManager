@@ -2,14 +2,28 @@
 
 /* Controllers */
 
-function MyCtrl1($scope, socket) {
-  socket.on('send:time', function (data) {
-    $scope.time = data.time;
-  });
-}
-MyCtrl1.$inject = ['$scope', 'socket'];
+function UserList($scope, socket, $http) {
+	$http.get('/api/users').
+	  success(function(data) {
+			$scope.users = data.users;
+			$scope.selected = data.users[0];
+		});
+	
 
-
-function MyCtrl2() {
+	$scope.selectUser = function(user) {
+		$('#' + $scope.selected.uid).removeClass('selected');
+    $scope.selected = user;
+    console.log($('#' + user.uid))
+    $('#' + user.uid).addClass('selected');
+	}
 }
-MyCtrl2.$inject = [];
+
+function EditUser($scope, $routeParams, $http) {
+	console.log($routeParams.uid)
+  $http.get('/api/user/' + $routeParams.uid).
+  	success(function(data) {
+  		$scope.user = data.user;
+  		console.log(data)
+  	});
+}
+

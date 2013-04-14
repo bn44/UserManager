@@ -5,7 +5,7 @@
 
 // Demonstrate how to register services
 // In this case it is a simple value service.
-angular.module('plpApp.services', []).
+angular.module('plpApp.services', ['ngResource']).
   value('version', '0.1').
   factory('socket', function ($rootScope) {
     var socket = io.connect();
@@ -29,4 +29,11 @@ angular.module('plpApp.services', []).
         })
       }
     };
+  }).
+  factory('Users', function($resource){
+    return $resource(
+      '/api/users',
+      {},
+      { query: {method: 'GET', params: {}, isArray: true}
+    });
   });

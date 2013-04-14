@@ -5,7 +5,8 @@
 
 var express = require('express'),
   routes = require('./routes'),
-  socket = require('./routes/socket.js');
+  socket = require('./routes/socket.js'),
+  api = require('./routes/api');
 
 var app = module.exports = express();
 var server = require('http').createServer(app);
@@ -36,6 +37,14 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
+
+// JSON API
+
+app.get('/api/users', api.users);
+app.get('/api/user/:id', api.user);
+app.get('/api/post', api.addUser);
+app.get('/api/post/:id', api.editUser);
+app.delete('/api/post/:id', api.deleteUser);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);

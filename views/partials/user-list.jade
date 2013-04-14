@@ -13,7 +13,7 @@
 		#accountsBox-header.header
 		#accountDetails
 			.profilePicture
-				//img(ng-src={{selected.picture}})
+				img(ng-src="{{selected.picture}}")
 			h2.name {{selected.firstName}} {{selected.lastName}}
 			.accountInfo
 				p.login Last Login: {{selected.lastLogin}}
@@ -28,7 +28,7 @@
 			ng-repeat="user in users | filter: query | orderBy: orderProp" 
 			ng-click = "selectUser(user)")
 				span.account-checkbox-container
-					//input(type = "checkbox" class = "account-checkbox")
+					input.account-checkbox(type = "checkbox")
 				span.account-name-container
 					{{user.lastName}}, {{user.firstName}}
 

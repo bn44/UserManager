@@ -1,4 +1,21 @@
-p This is the partial for view 2.
-p
-  | Showing of 'interpolate' filter:
-  | {{ 'Current version is v%VERSION%.' | interpolate }}
+#editAccount
+	label(for = "profilePicture") Profile Picture
+	#profilePicture
+		img(ng-src="{{selected.picture}}")
+	input#pictureUpload(type = "file")
+
+	#editfName
+		label(for = "firstName") First Name
+		input#firstName(type = "text" ng-value = "{{selected.firstName}}")
+
+	#editlName
+		label(for = "lastName") Last Name
+		input#lastName(type = "text" ng-value = "{{selected.lastName}}")
+
+	#email-container
+		label(for = "email") Email
+		input#email(type = "text" ng-value = "{{selected.email}}")
+
+	#bio-container
+		label(for = "bio") Bio
+		textarea#bio {{selected.bio}}
