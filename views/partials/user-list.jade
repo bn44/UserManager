@@ -22,6 +22,11 @@
 				p.bio Bio: {{selected.bio}}
 
 			.profileMenu
+				img#edit.button(src = "img/buttons/24_edit.png", ng-click="editUser()")
+				img#chat.button(src = "img/buttons/ChatPlaceholder.png")
+				img#email.button(src = "img/buttons/24_email.png")
+				img#archive.button(src = "img/buttons/24_archive.png")
+				img#close.button(src = "img/buttons/24_close.png")
 
 		#accountList
 			div.accountView(id = "{{user.uid}}"

@@ -178,3 +178,14 @@ exports.addUser = function (req, res) {
 	data.users.push(req.body);
 	res.json(req.body);
 }
+
+exports.editUser = function (req, res) {
+	var id = req.params.id;
+console.log(req.body)
+	if(id >= 0 && id < data.users.length){
+		data.users[id] = req.body;
+		res.json(true)
+	} else {
+		res.json(false)
+	}
+}

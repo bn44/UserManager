@@ -1,21 +1,28 @@
 #editAccount
+	#userInfo
+		#editfName
+			label(for = "firstName") First Name
+			input#firstName(ng-model = "form.firstName")
+
+		#editlName
+			label(for = "lastName") Last Name
+			input#lastName(ng-model = "form.lastName")
+
+		#email-container
+			label(for = "email") Email
+			input#email(ng-model = "form.email")
+
+		#bio-container
+			label(for = "bio") Bio
+			textarea#bio(ng-model = "form.bio")
+
+		#formButtons
+			button#submit(ng-click="submit()") Submit
+			button#back(ng-click="back()") Back
+
 	label(for = "profilePicture") Profile Picture
 	#profilePicture
-		img(ng-src="{{selected.picture}}")
+		img(ng-src="{{form.picture}}")
 	input#pictureUpload(type = "file")
 
-	#editfName
-		label(for = "firstName") First Name
-		input#firstName(type = "text" ng-value = "{{selected.firstName}}")
-
-	#editlName
-		label(for = "lastName") Last Name
-		input#lastName(type = "text" ng-value = "{{selected.lastName}}")
-
-	#email-container
-		label(for = "email") Email
-		input#email(type = "text" ng-value = "{{selected.email}}")
-
-	#bio-container
-		label(for = "bio") Bio
-		textarea#bio {{selected.bio}}
+	

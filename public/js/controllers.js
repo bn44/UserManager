@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-function UserList($scope, socket, $http) {
+function UserList($scope, socket, $http, $location) {
 	$http.get('/api/users').
 	  success(function(data) {
 			$scope.users = data.users;
@@ -16,14 +16,30 @@ function UserList($scope, socket, $http) {
     console.log($('#' + user.uid))
     $('#' + user.uid).addClass('selected');
 	}
+
+	$scope.editUser = function() {
+		$location.url('/users/'+$scope.selected.uid);
+	}
 }
 
-function EditUser($scope, $routeParams, $http) {
-	console.log($routeParams.uid)
+function EditUser($scope, $routeParams, $http, $location) {
+	$scope.form = {};
   $http.get('/api/user/' + $routeParams.uid).
   	success(function(data) {
-  		$scope.user = data.user;
-  		console.log(data)
+  		$scope.form = data.user;
+  		console.log($scope.form)
   	});
+
+  $scope.submit = function() {
+  	console.log($scope.form)
+  	$http.put('/api/user/' + $routeParams.uid, $scope.form).
+  		success(function(data){
+  			$location.url('/users');
+  		});
+  }
+
+  $scope.back = function() {
+  	$location.url('/users');
+  }
 }
 

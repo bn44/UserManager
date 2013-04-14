@@ -42,9 +42,9 @@ app.get('/partials/:name', routes.partials);
 
 app.get('/api/users', api.users);
 app.get('/api/user/:id', api.user);
-app.get('/api/post', api.addUser);
-app.get('/api/post/:id', api.editUser);
-app.delete('/api/post/:id', api.deleteUser);
+app.post('/api/users', api.addUser);
+app.put('/api/user/:id', api.editUser);
+app.delete('/api/user/:id', api.deleteUser);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
