@@ -1,0 +1,39 @@
+#accountsPage.appPage
+	#box1.box
+		#box1-header.header
+		#box1-content.content
+			p Search: 
+				input(ng-model = "query") 
+			p Sort By: 
+				select(ng-model = "orderProp")
+					option(value = "uid") UID
+					option(value = "firstName") First Name
+					option(value = "lastName") LastName
+	#accountsBox
+		#accountsBox-header.header
+		#accountDetails
+			.profilePicture
+				//img(ng-src={{selected.picture}})
+			h2.name {{selected.firstName}} {{selected.lastName}}
+			.accountInfo
+				p.login Last Login: {{selected.lastLogin}}
+				p.join Join Date: {{selected.joinDate}}
+				p.roles Roles:
+				p.bio Bio: {{selected.bio}}
+
+			.profileMenu
+
+		#accountList
+			div.accountView(id = "{{user.uid}}"
+			ng-repeat="user in users | filter: query | orderBy: orderProp" 
+			ng-click = "selectUser(user)")
+				span.account-checkbox-container
+					//input(type = "checkbox" class = "account-checkbox")
+				span.account-name-container
+					{{user.lastName}}, {{user.firstName}}
+
+	#box2.box
+		#box2-header.header
+
+	#box3.box
+		#box2-header.header
