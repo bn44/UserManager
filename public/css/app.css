@@ -57,6 +57,11 @@
   color: white;
 }
 
+#app #sidebar a{
+  text-decoration: none;
+  color: white;
+}
+
 #app #header{
   width: 944px;
   height: 100px;
@@ -77,17 +82,19 @@
 }
 
 #app #appPage{
-  width: 744px;
+  /*width: 744px;*/
+  width: 944px;
   height: auto;
   background-color: #ccc;
   margin-left: 80px;
-  padding-left: 200px;
+  /*padding-left: 200px;*/
   margin-top: 80px;
 }
 
 #app #appPage #appPage-inner{
   height: auto;
-  width: 713px;
+  /*width: 713px;*/
+  width: 913px;
   background-color: white;
   border: 1px solid #999;
   margin-top: 64px;
@@ -122,7 +129,7 @@
 }
 
 #accountsPage #accountList .accountView .account-name-container{
-  margin-left: 120px; 
+  margin-left: 40px; 
 }
 
 #accountsPage #accountList .accountView .account-checkbox-container{
@@ -130,16 +137,16 @@
 }
 
 #accountsPage #accountDetails{
-  width: 280px;
+  width: 340px;
   background-color: #9cf;
   position: relative;
   float: right;
 }
 
 #accountsPage #accountDetails .profilePicture{
-  height: 180px;
-  width: 180px;
-  margin: auto;
+  height: 120px;
+  width: 120px;
+  margin-left: 25px;
   margin-top: 25px;
 }
 
@@ -149,9 +156,28 @@
 }
 
 #accountsPage #accountDetails .accountInfo{
-  width: 150px;
+  width: 180px;
   height: 150px;
   margin: auto;
+  position: relative;
+  float: right;
+}
+
+#accountsPage #accountDetails .accountInfo p{
+  margin: 0;
+}
+
+#accountsPage #accountDetails #chatBox{
+  width: 90%;
+  height: 200px;
+  background-color: white;
+  margin: auto;
+  margin-top: 25px
+}
+
+#accountsPage #accountDetails #messageBox{
+  margin-left: 16px;
+  width: 302px;
 }
 
 #accountsPage #accountDetails .name{
@@ -189,10 +215,30 @@
 
 #accountsPage .box .content{
   padding: 20px;
+  height: 90px;
 }
 
 #accountsPage #box1{
   margin-bottom: 20px;
+}
+
+#accountsPage .box .button-container{
+  width: 76px;
+  text-align: center;
+  position: relative;
+  float: left;
+  margin-right: 45px;
+  margin-left: 25px;
+}
+
+#accountsPage .box .button-container a{
+  text-decoration: none;
+  color: black;
+}
+
+#accountsPage .box .button{
+  width: 52px;
+  height: 52px;
 }
 
 #accountsPage #box2.box{
@@ -217,6 +263,30 @@
   height: 30px;
   background-color: black;
   color: white;
+}
+
+#accountsPage .header p{
+  color: white;
+  position: relative;
+  float: left;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+#accountsPage .header p#name{
+  margin-left:  50px;
+}
+
+#accountsPage .header p#status{
+  margin-left: 70px;
+}
+
+#accountsPage .header p#activity{
+  margin-left: 70px;
+}
+
+#accountsPage .header p#profile{
+  margin-left: 280px;
 }
 
 #editAccount #profilePicture{
@@ -261,7 +331,6 @@
   position: relative;
   float: right;
   margin-right: 140px;
-
 }
 
 #editAccount #formButtons{

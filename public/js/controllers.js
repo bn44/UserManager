@@ -20,6 +20,8 @@ function UserList($scope, socket, $http, $location) {
 	$scope.editUser = function() {
 		$location.url('/users/'+$scope.selected.uid);
 	}
+
+  $scope.orderProp = "uid";
 }
 
 function EditUser($scope, $routeParams, $http, $location) {

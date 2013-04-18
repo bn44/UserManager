@@ -2,25 +2,40 @@
 	#box1.box
 		#box1-header.header
 		#box1-content.content
-			p Search: 
-				input(ng-model = "query") 
-			p Sort By: 
-				select(ng-model = "orderProp")
-					option(value = "uid") UID
-					option(value = "firstName") First Name
-					option(value = "lastName") LastName
+			.button-container
+				a(href = "#")
+					img#addAccount.button(src = "img/buttons/AddPersonPlaceHolder.png")
+					label(for = "addAccount") Add
+			.button-container
+				a(href = "#")
+					img#groupChat.button(src = "img/buttons/ChatPlaceholder.png")
+					label(for = "groupChat") Group Chat
+			.button-container
+				a(href = "#")
+					img#emailGroup.button(src = "img/buttons/48_email.png")
+					label(for = "emailGroup") Email Group
+	input(ng-model = "query", placeholder= "Search") 
+	select(ng-model = "orderProp")
+		option(value = "uid") UID
+		option(value = "firstName") First Name
+		option(value = "lastName") LastName
 	#accountsBox
 		#accountsBox-header.header
+			p#name Last Name, First Name
+			p#status Status
+			p#activity Recent Acitivity
+			p#profile Profile
 		#accountDetails
-			.profilePicture
-				img(ng-src="{{selected.picture}}")
-			h2.name {{selected.firstName}} {{selected.lastName}}
+			
 			.accountInfo
+				h3.name {{selected.firstName}} {{selected.lastName}}
 				p.login Last Login: {{selected.lastLogin}}
 				p.join Join Date: {{selected.joinDate}}
 				p.roles Roles:
-				p.bio Bio: {{selected.bio}}
-
+			.profilePicture
+				img(ng-src="{{selected.picture}}")
+			#chatBox
+			textArea#messageBox
 			.profileMenu
 				img#edit.button(src = "img/buttons/24_edit.png", ng-click="editUser()")
 				img#chat.button(src = "img/buttons/ChatPlaceholder.png")
@@ -36,9 +51,3 @@
 					input.account-checkbox(type = "checkbox")
 				span.account-name-container
 					{{user.lastName}}, {{user.firstName}}
-
-	#box2.box
-		#box2-header.header
-
-	#box3.box
-		#box2-header.header
