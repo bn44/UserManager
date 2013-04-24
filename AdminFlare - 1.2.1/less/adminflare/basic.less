@@ -1,0 +1,40 @@
+//
+// Basic styles
+// --------------------------------------------------
+
+body {
+  background-image: url("@{imagesPath}/body-bg.png");
+  padding: 62px 0 0 (@bodyLeftPadding + @gridGutterWidth);
+}
+
+legend {
+  font-size: 18px;
+}
+
+table {
+  font-size: 13px;
+}
+
+a:active {
+  background: none;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  .box-shadow(~"rgba(255, 255, 255, 0.75) 0 1px 0, rgba(255, 255, 255, 0.75) 0 1px 0");
+}
+
+#main-navbar .container {
+  width: @bodyLeftPadding + @gridGutterWidth + @gridRowWidth;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  width: @gridRowWidth;
+}
+
+.placeholder {
+  color: #b2b2b2 !important;
+}
